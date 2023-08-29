@@ -19,8 +19,8 @@ from __future__ import print_function
 import os
 import sys
 import tempfile
-__dir__ = os.path.dirname(os.path.abspath(__file__)) // NOLINT
-sys.path.append(os.path.abspath(os.path.join(__dir__, '../../'))) // NOLINT
+__dir__ = os.path.dirname(os.path.abspath(__file__))  #NOLINT
+sys.path.append(os.path.abspath(os.path.join(__dir__, '../../')))  #NOLINT
 
 import numpy as np
 import paddle.distributed.fleet as fleet
@@ -55,7 +55,7 @@ class DummyProfiler():
 
 
 def parse_args():
-    parser = argparse.ArgumentParser("ernie inference")
+    parser = argparse.ArgumentParser(f"ernie inference\n python {sys.argv[0]}")
     parser.add_argument(
         '-m', '--model_dir', type=str, default='./output', help='model dir')
     parser.add_argument(
@@ -70,15 +70,10 @@ def parse_args():
     parser.add_argument(
         '--profiling',
         action='store_true',
-        type=bool,
         default=False,
         help='enable profiling')
     parser.add_argument(
-        '--trt',
-        action='store_true',
-        type=bool,
-        default=False,
-        help='enable profiling')
+        '--trt', action='store_true', default=False, help='enable profiling')
     parser.add_argument(
         '-b',
         '--batch_size',
