@@ -10,7 +10,7 @@ repos:
     -   id: yapf
         files: (.*\.(py|bzl)|BUILD|.*\.BUILD|WORKSPACE)$
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: 5bf6c09bfa1297d3692cadd621ef95f1284e33c0
+    rev: main
     hooks:
     -   id: check-added-large-files
     -   id: check-merge-conflict
