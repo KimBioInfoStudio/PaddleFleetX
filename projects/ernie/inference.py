@@ -19,6 +19,7 @@ from __future__ import print_function
 import os
 import sys
 import tempfile
+import time
 __dir__ = os.path.dirname(os.path.abspath(__file__))  #NOLINT
 sys.path.append(os.path.abspath(os.path.join(__dir__, '../../')))  #NOLINT
 
@@ -131,6 +132,7 @@ def main(args):
     ###########################################################################################################
     if args.dummy:
         np.random.seed(args.seed)
+        inputs = dict()
         inputs['input_ids'] = np.random.randint(
             40000, size=(args.batch_size, args.seqlen), dtype="int64")
         inputs['token_type_ids'] = np.random.randint(
