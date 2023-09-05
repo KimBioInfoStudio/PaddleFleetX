@@ -20,5 +20,4 @@ rm -rf $log_dir
 python -m paddle.distributed.launch --log_dir $log_dir --devices "0,1,2,3,4,5,6,7" \
     ./tools/auto_export.py \
     -c ./ppfleetx/configs/nlp/ernie/auto/finetune_ernie_175B_mp8.yaml \
-    -o Global.device=mlu \
     -o Engine.save_load.output_dir="output_ernie_175B"
